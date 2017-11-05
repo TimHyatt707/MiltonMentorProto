@@ -1,1 +1,1 @@
-Demonstration of Milton Mentro Platform for Devfest hackathon.
+Demonstration of Milton Mentor Platform for Devfest hackathon.
