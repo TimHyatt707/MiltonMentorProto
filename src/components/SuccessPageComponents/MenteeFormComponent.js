@@ -41,18 +41,10 @@ export default class MenteeFormComponent extends React.Component {
             style={{ maxWidth: 250, margin: 20 }}
             onChange={this._handleChange2}
           >
-            <MenuItem
-              value={1}
-              label="Career Field"
-              primaryText="Engineering"
-            />
+            <MenuItem value={1} primaryText="Engineering" />
             <MenuItem value={2} primaryText="Business" />
             <MenuItem value={3} primaryText="Finances" />
-            <MenuItem
-              value={4}
-              label="Career Field"
-              primaryText="Real Estate"
-            />
+            <MenuItem value={4} primaryText="Real Estate" />
           </DropDownMenu>
           <p>Hobbies</p>
           <DropDownMenu
@@ -94,7 +86,6 @@ export default class MenteeFormComponent extends React.Component {
     const career = e.target.career.value;
     const hobby = e.target.hobby.value;
     const request = Object.assign({}, career, personality, hobby);
-    console.log(request);
     this.props.onSubmit(request);
   };
 }

@@ -24,44 +24,39 @@ export default class MentorFormComponent extends React.Component {
           }}
           onSubmit={this._onSubmit}
         >
+          <p>Personality</p>
           <DropDownMenu
             id="personality"
             value={this.state.valueSet1}
             style={{ maxWidth: 250, margin: 20 }}
-            onChange={this._handleChange}
+            onChange={this._handleChange1}
           >
-            <MenuItem value={1} label="Personality" primaryText="Introvert" />
-            <MenuItem value={2} label="Personality" primaryText="Extrovert" />
+            <MenuItem value={1} primaryText="Introvert" />
+            <MenuItem value={2} primaryText="Extrovert" />
           </DropDownMenu>
+          <p>Career</p>
           <DropDownMenu
             id="career"
             value={this.state.valueSet2}
             style={{ maxWidth: 250, margin: 20 }}
-            onChange={this._handleChange}
+            onChange={this._handleChange2}
           >
-            <MenuItem
-              value={1}
-              label="Career Field"
-              primaryText="Engineering"
-            />
-            <MenuItem value={2} label="Career Field" primaryText="Business" />
-            <MenuItem value={3} label="Career Field" primaryText="Finances" />
-            <MenuItem
-              value={4}
-              label="Career Field"
-              primaryText="Real Estate"
-            />
+            <MenuItem value={1} primaryText="Engineering" />
+            <MenuItem value={2} primaryText="Business" />
+            <MenuItem value={3} primaryText="Finances" />
+            <MenuItem value={4} primaryText="Real Estate" />
           </DropDownMenu>
+          <p>Hobbies</p>
           <DropDownMenu
             value={this.state.valueSet3}
             onChange={this._handleChange}
             style={{ maxWidth: 250, margin: 20 }}
-            onChange={this._handleChange}
+            onChange={this._handleChange3}
           >
-            <MenuItem value={1} label="Hobbies" primaryText="Kayaking" />
-            <MenuItem value={2} label="Hobbies" primaryText="Bowling" />
-            <MenuItem value={3} label="Hobbies" primaryText="Fishing" />
-            <MenuItem value={4} label="Hobbies" primaryText="Surfing" />
+            <MenuItem value={1} primaryText="Kayaking" />
+            <MenuItem value={2} primaryText="Bowling" />
+            <MenuItem value={3} primaryText="Fishing" />
+            <MenuItem value={4} primaryText="Surfing" />
           </DropDownMenu>
           <Link to="/matches">
             <RaisedButton
@@ -74,8 +69,16 @@ export default class MentorFormComponent extends React.Component {
       </Paper>
     );
   }
-  _handleChange = (event, index, value) => {
-    this.setState({ value });
+  _handleChange1 = (event, index, value) => {
+    this.setState({ valueSet1: value });
+  };
+
+  _handleChange2 = (event, index, value) => {
+    this.setState({ valueSet2: value });
+  };
+
+  _handleChange3 = (event, index, value) => {
+    this.setState({ valueSet3: value });
   };
   _onSubmit = e => {
     e.preventDefault();
@@ -83,7 +86,6 @@ export default class MentorFormComponent extends React.Component {
     const career = e.target.career.value;
     const hobby = e.target.hobby.value;
     const request = Object.assign({}, career, personality, hobby);
-    console.log(request);
     this.props.onSubmit(request);
   };
 }

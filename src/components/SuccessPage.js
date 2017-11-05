@@ -8,9 +8,9 @@ export default class SuccessPage extends React.Component {
   render() {
     return (
       <SuccessPageLayout>
-        <Navbar pageTitle="Success!" />
-        <MentorFormComponent />
-        <MenteeFormComponent />
+        <Navbar pageTitle="Mentor Matcher" />
+        <MentorFormComponent onSubmit={this.props.onSubmit} />
+        <MenteeFormComponent onSubmit={this.props.onSubmit} />
       </SuccessPageLayout>
     );
   }
