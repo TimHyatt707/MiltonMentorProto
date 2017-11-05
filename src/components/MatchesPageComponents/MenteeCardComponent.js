@@ -7,11 +7,12 @@ import {
   CardTitle,
   CardText
 } from "material-ui/Card";
+import { Link } from "react-router-dom";
 import FlatButton from "material-ui/FlatButton";
 
 export default class MenteeCardComponent extends React.Component {
   render() {
-    const match = this.props.data;
+    let match = this.props.data;
     if (!this.props.data) {
       match = { name: "", major: "", avatar: "" };
     }

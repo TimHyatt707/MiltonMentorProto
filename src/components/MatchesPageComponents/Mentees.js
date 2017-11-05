@@ -11,7 +11,7 @@ module.exports = [
     name: "David Smarts",
     major: "Finance",
     avatar: "./img007.jpeg",
-    major: "Real Estate",
+    career: "Real Estate",
     personality: "Extrovert",
     hobby: "Fishing"
   },
@@ -19,7 +19,7 @@ module.exports = [
     name: "Michael Brady",
     major: "Engineering",
     avatar: "./img008.jpg",
-    major: "Engineering",
+    career: "Engineering",
     personality: "Introvert",
     hobby: "Bowling"
   },
@@ -27,15 +27,15 @@ module.exports = [
     name: "Amber Murray",
     major: "Finances",
     avatar: "./img009.jpeg",
-    major: "Finances",
+    career: "Finances",
     personality: "Exrovert",
     hobby: "Kayaking"
   },
   {
     name: "Bradley Jones",
-    Major: "Engineering",
-    avatar: "./img010.jpeg",
     major: "Engineering",
+    avatar: "./img010.jpeg",
+    career: "Engineering",
     personality: "Introvert",
     hobby: "Surfing"
   }

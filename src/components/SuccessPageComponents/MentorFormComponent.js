@@ -48,6 +48,7 @@ export default class MentorFormComponent extends React.Component {
           </DropDownMenu>
           <p>Hobbies</p>
           <DropDownMenu
+            id="hobby"
             value={this.state.valueSet3}
             onChange={this._handleChange}
             style={{ maxWidth: 250, margin: 20 }}
@@ -58,13 +59,11 @@ export default class MentorFormComponent extends React.Component {
             <MenuItem value={3} primaryText="Fishing" />
             <MenuItem value={4} primaryText="Surfing" />
           </DropDownMenu>
-          <Link to="/matches">
-            <RaisedButton
-              label="GO"
-              type="submit"
-              style={{ maxWidth: 250, margin: 20 }}
-            />
-          </Link>
+          <RaisedButton
+            label="GO"
+            type="submit"
+            style={{ maxWidth: 250, margin: 20 }}
+          />
         </form>
       </Paper>
     );
@@ -82,10 +81,12 @@ export default class MentorFormComponent extends React.Component {
   };
   _onSubmit = e => {
     e.preventDefault();
+    console.log(e.target);
     const personality = e.target.personality.value;
     const career = e.target.career.value;
     const hobby = e.target.hobby.value;
     const request = Object.assign({}, career, personality, hobby);
-    this.props.onSubmit(request);
+    request.role = "Mentor";
+    this.props.onSubmitRequest(request);
   };
 }

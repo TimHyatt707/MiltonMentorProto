@@ -4,14 +4,12 @@ import Navbar from "./NavbarComponent";
 import MentorFormComponent from "./SuccessPageComponents/MentorFormComponent";
 import MenteeFormComponent from "./SuccessPageComponents/MenteeFormComponent";
 
-export default class SuccessPage extends React.Component {
-  render() {
-    return (
-      <SuccessPageLayout>
-        <Navbar pageTitle="Mentor Matcher" />
-        <MentorFormComponent onSubmit={this.props.onSubmit} />
-        <MenteeFormComponent onSubmit={this.props.onSubmit} />
-      </SuccessPageLayout>
-    );
-  }
+export default function SuccessPage({ onSubmitRequest }) {
+  return (
+    <SuccessPageLayout>
+      <Navbar pageTitle="Mentor Matcher" />
+      <MentorFormComponent onSubmitRequest={onSubmitRequest} />
+      <MenteeFormComponent onSubmitRequest={onSubmitRequest} />
+    </SuccessPageLayout>
+  );
 }

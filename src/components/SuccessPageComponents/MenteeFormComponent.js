@@ -26,7 +26,7 @@ export default class MenteeFormComponent extends React.Component {
         >
           <p>Personality</p>
           <DropDownMenu
-            id="personality"
+            id={"personality"}
             value={this.state.valueSet1}
             style={{ maxWidth: 250, margin: 20 }}
             onChange={this._handleChange1}
@@ -48,6 +48,7 @@ export default class MenteeFormComponent extends React.Component {
           </DropDownMenu>
           <p>Hobbies</p>
           <DropDownMenu
+            id="hobby"
             value={this.state.valueSet3}
             onChange={this._handleChange}
             style={{ maxWidth: 250, margin: 20 }}
@@ -58,13 +59,11 @@ export default class MenteeFormComponent extends React.Component {
             <MenuItem value={3} primaryText="Fishing" />
             <MenuItem value={4} primaryText="Surfing" />
           </DropDownMenu>
-          <Link to="/matches">
-            <RaisedButton
-              label="GO"
-              type="submit"
-              style={{ maxWidth: 250, margin: 20 }}
-            />
-          </Link>
+          <RaisedButton
+            label="GO"
+            type="submit"
+            style={{ maxWidth: 250, margin: 20 }}
+          />
         </form>
       </Paper>
     );
@@ -86,6 +85,7 @@ export default class MenteeFormComponent extends React.Component {
     const career = e.target.career.value;
     const hobby = e.target.hobby.value;
     const request = Object.assign({}, career, personality, hobby);
-    this.props.onSubmit(request);
+    request.role === "Mentee";
+    this.props.onSubmitRequest(request);
   };
 }
